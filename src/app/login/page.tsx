@@ -76,7 +76,7 @@ export default function LoginPage() {
           {isSignUp ? 'Already have an account?' : "Don't have an account?"}{' '}
           <button
             onClick={() => setIsSignUp(!isSignUp)}
-            className="text-blue-600 hover:underline ml-1"
+            className="text-gray-600 hover:underline ml-1 cursor-pointer"
           >
             {isSignUp ? 'Login' : 'Sign Up'}
           </button>
@@ -93,7 +93,7 @@ export default function LoginPage() {
 
         <button
           onClick={handleGoogleSignIn}
-          className="w-full flex items-center justify-center bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition"
+          className="w-full flex items-center justify-center bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition  cursor-pointer"
         >
           Sign in with Google
         </button>

@@ -69,7 +69,7 @@ export default function NewEntryPage() {
 
           <button
             type="submit"
-            className="w-full bg-gray-700 text-white py-2 rounded hover:bg-gray-800"
+            className="w-full bg-gray-700 text-white py-2 rounded hover:bg-gray-800  cursor-pointer"
           >
             Save Entry
           </button>
@@ -77,7 +77,7 @@ export default function NewEntryPage() {
 
         <button
           onClick={() => router.push('/dashboard')}
-          className="text-bg-gray-600 hover:underline text-sm block text-center"
+          className="text-bg-gray-600 hover:underline text-sm block text-center  cursor-pointer"
         >
           Cancel and go back
         </button>
