@@ -11,9 +11,11 @@ export default function Home() {
   </h1>
 </Link>
 
-        <button className="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition-colors cursor-pointer">
-          Sign In
-        </button>
+        <Link href="/login">
+          <button className="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition-colors cursor-pointer">
+            Sign In
+          </button>
+        </Link>
       </header>
 
    
@@ -72,9 +74,11 @@ export default function Home() {
 
       
         <div className="text-center">
-          <button className="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-900 transition-colors text-lg cursor-pointer">
-            Start Journaling
-          </button>
+         <Link href="/login">
+            <button className="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-900 transition-colors text-lg cursor-pointer">
+              Start Journaling
+            </button>
+          </Link>
         </div>
       </main>
     </div>

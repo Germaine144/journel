@@ -21,7 +21,7 @@ export default function NewEntryPage() {
       }
     });
 
-    return () => unsubscribe();
+    return () => unsubscribe(); //// cleanup when component is removed 
   }, [router]);
 
   const handleSubmit = async (e: React.FormEvent) => {

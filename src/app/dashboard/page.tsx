@@ -11,7 +11,8 @@ interface JournalEntry {
   content: string; 
   date: string; 
 } 
- 
+ //State Hooks
+
 export default function DashboardPage() { 
   const router = useRouter(); 
   const [user, setUser] = useState<any>(null); 
@@ -51,7 +52,7 @@ export default function DashboardPage() {
       setEntries(items); 
     }); 
  
-    return () => unsubscribe(); 
+    return () => unsubscribe();  // cleanup when component is removed 
   }, [user]); 
  
   const handleDelete = async (id: string) => { 
@@ -68,7 +69,7 @@ export default function DashboardPage() {
     router.push('/'); 
   }; 
  
-  if (!user) return null; 
+  if (!user) return null; // don't show anything until we know user is loggedin 
  
   return ( 
     <div className="min-h-screen bg-gray-50"> 
