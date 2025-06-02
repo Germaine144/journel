@@ -1,9 +1,10 @@
 'use client';
+
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { auth } from "../lib/firebase";
+import { auth } from '../lib/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
-import { db } from "../lib/firebase";
+import { db } from '../lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 export default function NewEntryPage() {
@@ -21,7 +22,7 @@ export default function NewEntryPage() {
       }
     });
 
-    return () => unsubscribe(); //// cleanup when component is removed 
+    return () => unsubscribe(); // Cleanup when component is removed
   }, [router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -32,7 +33,11 @@ export default function NewEntryPage() {
       await addDoc(collection(db, 'users', user.uid, 'entries'), {
         title,
         content,
-        date: new Date().toISOString(), 
+        date: new Date().toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        }),
         createdAt: serverTimestamp(),
       });
       router.push('/dashboard');
@@ -69,7 +74,7 @@ export default function NewEntryPage() {
 
           <button
             type="submit"
-            className="w-full bg-gray-700 text-white py-2 rounded hover:bg-gray-800  cursor-pointer"
+            className="w-full bg-gray-700 text-white py-2 rounded hover:bg-gray-800 cursor-pointer"
           >
             Save Entry
           </button>
@@ -77,7 +82,7 @@ export default function NewEntryPage() {
 
         <button
           onClick={() => router.push('/dashboard')}
-          className="text-bg-gray-600 hover:underline text-sm block text-center  cursor-pointer"
+          className="text-bg-gray-600 hover:underline text-sm block text-center cursor-pointer"
         >
           Cancel and go back
         </button>
